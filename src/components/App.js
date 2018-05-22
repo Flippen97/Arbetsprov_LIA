@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'font-awesome/css/font-awesome.min.css';
 import ListView from './ListView';
 import logo from '../logo.svg';
 import list from './list.json';
@@ -43,7 +44,7 @@ class App extends Component {
              />;
     }
     return (
-      <div>
+      <div className="main-container">
         {view}
       </div>
     );

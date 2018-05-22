@@ -1,17 +1,36 @@
 import React from 'react';
+import SalongCard from './SalongCard';
 
 function ListSalongs(props){
-  return props.salongs.map((salong) => {
-    if (salong.id === (props.salongId)) {
+  let list = ''
+  if(props.priceFilter !== 0){
+    const thing = props.priceFilter.split('-')
+    const lessThen = parseInt(thing[0], 10);
+    const moreThen = parseInt(thing[1], 10);
+    list = props.salongs.map((salong) => {
+        if ((salong.price) >= lessThen && (salong.price) <= moreThen) {
+          return (
+            <SalongCard salong={salong}
+                        key={salong.id}
+                        singleView={props.singleView}
+            />
+          )
+         }
+        });
+  }
+  else{
+    list = props.salongs.map((salong) => {
       return (
-        <div key={salong.id}>
-          <button onClick={props.listView}>back</button>
-          <p> { salong.name } </p> 
-        </div>
-      );
-    }
-    return null;
-  });
+        <SalongCard salong={salong}
+                    key={salong.id}
+                    singleView={props.singleView}
+        />
+      )
+    })
+  }
+  return list;
 }
 
 export default ListSalongs;
+
+

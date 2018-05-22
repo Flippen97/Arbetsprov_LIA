@@ -26,3 +26,13 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.main-container{
+  background-color: rebeccapurple;
+  max-width: 420px;
+  color: yellow;
+}
+.listView-container header{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
