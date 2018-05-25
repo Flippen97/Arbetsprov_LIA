@@ -1,19 +1,28 @@
 import React from 'react';
+import StarRating from './StarRating';
 
-function SalonCard(props){
+function SalongCard(props){
     return(
-        <div key={props.salong.id} onClick={() => props.singleView(props.salong.id)}>
-            <p>{ props.salong.name }</p>
-            <p>{ props.salong.rating}
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star-o" aria-hidden="true"></i>
-            </p>
-            <span> { props.salong.price + "kr"} </span>
-            <span><i className="fa fa-chevron-right"></i></span>
-        </div>
-    )
+        <li key={props.salong.id} onClick={() => props.singleView(props.salong.id)}>
+            <div>
+                <span className="salongCardTime">{props.salong.time}</span>
+            </div>
+            <div>
+                <h2 className="salongCardName">{ props.salong.name }</h2>
+                <StarRating rating={props.salong.rating}
+                            itemclass="salongCardStars"
+                />
+                <span className="salongCardAmountRating">{"(" + props.salong.amountRating + ")"}</span>
+                <span className="salongCardAddress">{props.salong.address}</span>
+            </div>
+            <div>
+                <span className="salongCardPrice"> { props.salong.price + "kr"} </span>
+                <span className="salongCardDuration">{props.salong.duration + "min" }</span>
+            </div>
+            <div>
+                <span className="chevronForward"><i className="fa fa-chevron-right"></i></span>
+            </div>
+        </li>
+      )
   }
-  export default SalonCard;
+  export default SalongCard;

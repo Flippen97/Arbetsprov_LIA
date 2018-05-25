@@ -3,10 +3,10 @@ import SalongCard from './SalongCard';
 
 function ListSalongs(props){
   let list = ''
-  if(props.priceFilter !== 0){
-    const thing = props.priceFilter.split('-')
-    const lessThen = parseInt(thing[0], 10);
-    const moreThen = parseInt(thing[1], 10);
+  if(props.priceFilter !== 0 && props.priceFilter !== "0"){
+    const price = props.priceFilter.split('-')
+    const lessThen = parseInt(price[0], 10);
+    const moreThen = parseInt(price[1], 10);
     list = props.salongs.map((salong) => {
         if ((salong.price) >= lessThen && (salong.price) <= moreThen) {
           return (
@@ -16,6 +16,7 @@ function ListSalongs(props){
             />
           )
          }
+         return null;
         });
   }
   else{
@@ -32,5 +33,3 @@ function ListSalongs(props){
 }
 
 export default ListSalongs;
-
-

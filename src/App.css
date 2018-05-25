@@ -1,38 +1,216 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: FontBureau-MillerBannerLight;
+  src: url(FontBureau-MillerBannerLight.otf) format("opentype");
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+body {
+  margin: 0;
+  padding: 0;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-.main-container{
-  background-color: rebeccapurple;
+main{
+  background-color: white;
   max-width: 420px;
-  color: yellow;
+  color: #202020;
+  border-right: 3px solid blueviolet;
 }
+/*
+  Header styling
+*/
 .listView-container header{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  height: 35px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #B69F58;
+}
+.chevronBack{
+  display: flex;
+  align-items: center;
+}
+.chevronBack i{
+  margin-left: 6%;
+  font-size: 1.3em;
+  color:#B69F58;
+}
+.headerTitle{
+  font-family: FontBureau-MillerBannerLight;
+  margin: 0;
+  color:black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4em;
+  font-weight: lighter;
+}
+.filterIcon{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color:#B69F58;
+}
+.filterIcon i{
+  margin-right: 6%;
+  font-size: 1.3em;
+}
+/*
+  Select Filter styling
+*/
+select {
+  border-radius: 0;
+  width: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  padding: 5px 35px 5px 10px;
+  font-size: 14px;
+  border: 0;
+  border-bottom: 1px solid #B69F58;
+  height: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("select-arrow.svg") no-repeat scroll right 10px center ;
+}
+option{
+  width: 80%;
+}
+/*
+  Listview 
+*/
+ul {
+  list-style-type: none;
+  margin: 2%;
+  padding: 0;
+}
+li{
+  display: grid;
+  grid-template-columns: 15% 65% 15% 5%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #EEEEEE;
+}
+/*
+Salong card styling
+*/
+.salongCardTime{
+  display: flex;
+  justify-content: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 500;
+  font-size: 0.8em;
+  margin-top: 15px;
+}
+.salongCardName{
+  margin: 12px 0 8px 0;
+  font-family: FontBureau-MillerBannerLight;
+  font-size: 1em
+}
+.salongCardStars{
+  color:#B69F58;
+  font-size: 0.7em;
+}
+.salongCardAmountRating{
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  font-size: 0.6em;
+  margin-left: 1%;
+}
+.salongCardAddress{
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  font-size: 0.8em;
+  margin: 5px auto;
+  margin: 5px 0 10px 0;
+}
+.salongCardPrice{
+  display: flex;
+  justify-content: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 500;
+  font-size: 0.8em;
+  margin-top: 15px;
+}
+.salongCardDuration{
+  display: flex;
+  justify-content: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  font-size: 0.7em;
+}
+.chevronForward {
+  color:#B69F58;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+/*
+  single View styling
+*/
+.singleViewBackIcon i{
+  margin-left: 3%;
+  font-size: 1.3em;
+  color: white;
+  margin-top: 10px;
+}
+.singleViewSaveIcon i{
+  color: white;
+  font-size: 1.3em;
+  margin-left: 85%;
+  margin-top: 10px;
+}
+.singleViewName{
+  font-family: FontBureau-MillerBannerLight;
+  font-size: 1.2em;
+  margin-top: 145px;
+  display: block;
+  color: white;
+  margin-left: 3%;
+}
+.singleViewStars{
+  margin-top: 10px;
+  display: inline-block;
+  color:#B69F58;
+  margin-left: 3%;
+}
+.singleViewAmountRating{
+  display: inline-block;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  font-size: 0.8em;
+  margin-left: 2%;
+  color: white;
+}
+.singleViewNav{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   text-align: center;
+}
+.singleViewNav span{
+  padding: 10px;
+}
+.singleViewNav .singleViewBorderBottom{
+  border-bottom: #B69F58 solid 2px;
+}
+.singleViewInfoSection{
+  padding-top: 10px;
+  background-color: #EEEEEE;
+}
+.singleViewInfoSection div{
+  background-color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  font-size: 0.8em;
+  border-bottom: 1px solid #EEEEEE;
+  padding: 12px 20px 12px 20px;
+}
+.singleViewInfoSection div:nth-last-child(1){
+  border: none;
+}
+.singleViewInfoSection div i{
+  width: 20px;
+}
+.singleViewInfoSection p{
+  margin: 0;
+}
+.singleViewWorkingHours img{
+  margin-left: 20px;
 }

@@ -23,17 +23,19 @@ class ListView extends React.Component {
     return (
         <div className="listView-container">
             <header>
-                <span><i className="fa fa-chevron-left"></i></span>
-                <span>HÅR</span>
-                <span onClick={this.toggleFilter}><i className="fa fa-sliders fa-rotate-90"></i></span>
+                <span className="chevronBack"><i className="fa fa-chevron-left"></i></span>
+                <h1 className="headerTitle">Hår</h1>
+                <span className="filterIcon"><i className="fa fa-sliders fa-rotate-90" onClick={this.toggleFilter}></i></span>
             </header>
         <FilterMenu toggleFilter={this.state.togglefFilter}
                     filterList={this.filterList}
         />
-        <ListSalongs salongs={this.props.salongs}
-                     priceFilter={this.state.priceFilter}
-                     singleView={this.props.singleView} 
-                    />
+        <ul>
+            <ListSalongs salongs={this.props.salongs}
+                         priceFilter={this.state.priceFilter}
+                         singleView={this.props.singleView} 
+             />
+        </ul>
         </div>
     );
   }
