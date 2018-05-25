@@ -75,12 +75,12 @@ option{
 /*
   Listview 
 */
-ul {
+.listView-container ul {
   list-style-type: none;
   margin: 2%;
   padding: 0;
 }
-li{
+.listView-container ul li{
   display: grid;
   grid-template-columns: 15% 65% 15% 5%;
   box-sizing: border-box;
@@ -160,10 +160,9 @@ Salong card styling
 .singleViewName{
   font-family: FontBureau-MillerBannerLight;
   font-size: 1.2em;
-  margin-top: 145px;
   display: block;
   color: white;
-  margin-left: 3%;
+  margin: 145px 0 0 3%;
 }
 .singleViewStars{
   margin-top: 10px;
@@ -194,7 +193,12 @@ Salong card styling
   padding-top: 10px;
   background-color: #EEEEEE;
 }
-.singleViewInfoSection div{
+.singleViewInfoSection ul{    
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.singleViewInfoSection ul li{
   background-color: white;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
@@ -202,10 +206,10 @@ Salong card styling
   border-bottom: 1px solid #EEEEEE;
   padding: 12px 20px 12px 20px;
 }
-.singleViewInfoSection div:nth-last-child(1){
+.singleViewInfoSection ul li:nth-last-child(1){
   border: none;
 }
-.singleViewInfoSection div i{
+.singleViewInfoSection ul li i{
   width: 20px;
 }
 .singleViewInfoSection p{

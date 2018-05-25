@@ -15,11 +15,7 @@ class SingleView extends React.Component {
     this.setState({ hover: false });    
   }
   toggleSection = () =>{
-    if(this.state.sectionView){
-      this.setState({ sectionView: false });
-    }else{
-      this.setState({ sectionView: true });
-    }
+   this.setState({ sectionView: !this.state.sectionView });
   }
 
 
@@ -46,16 +42,16 @@ class SingleView extends React.Component {
                 onMouseLeave={this.hoverOff}
               ></i>
             </span>
-            <span className="singleViewName"> { salong.name } </span>
+            <h2 className="singleViewName"> { salong.name } </h2>
             <StarRating rating={salong.rating}
                         itemclass="singleViewStars"
             />
             <span className="singleViewAmountRating">{"(" + salong.amountRating + ")"}</span>
           </header>
-          <div className="singleViewNav">
+          <nav className="singleViewNav">
             <span className={this.state.sectionView ? "singleViewBorderBottom" : ""} onClick={this.toggleSection}>Info</span>
             <span className={this.state.sectionView ? "" : "singleViewBorderBottom"} onClick={this.toggleSection}>Schema</span>
-          </div>
+          </nav>
           {this.state.sectionView ? <SalongInfoSection salong={salong} /> : <div></div>}
         </div> 
       );
