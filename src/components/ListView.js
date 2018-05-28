@@ -5,38 +5,45 @@ import FilterMenu from './FilterMenu';
 class ListView extends React.Component {
   state = {
     togglefFilter: false,
-    priceFilter: 0
-  }
-  toggleFilter = () =>{
-    if(this.state.togglefFilter){
+    priceFilter: 0,
+  };
+  toggleFilter = () => {
+    if (this.state.togglefFilter) {
       this.setState({ togglefFilter: false });
-    }else{
+    } else {
       this.setState({ togglefFilter: true });
     }
-  }
+  };
   filterList = (event) => {
     this.setState({ priceFilter: event.target.value });
-  }
-  render(){
-    console.log(this.state)
-
+  };
+  render() {
     return (
-        <div className="listView-container">
-            <header>
-                <span className="chevronBack"><i className="fa fa-chevron-left"></i></span>
-                <h1 className="headerTitle">Hår</h1>
-                <span className="filterIcon"><i className="fa fa-sliders fa-rotate-90" onClick={this.toggleFilter}></i></span>
-            </header>
-        <FilterMenu toggleFilter={this.state.togglefFilter}
-                    filterList={this.filterList}
+      <div className="listView-container">
+        <header>
+          <span className="chevronBack">
+            <i className="fa fa-chevron-left" />
+          </span>
+          <h1 className="headerTitle">Hår</h1>
+          <span className="filterIcon">
+            <i
+              className="fa fa-sliders fa-rotate-90"
+              onClick={this.toggleFilter}
+            />
+          </span>
+        </header>
+        <FilterMenu
+          toggleFilter={this.state.togglefFilter}
+          filterList={this.filterList}
         />
         <ul>
-            <ListSalongs salongs={this.props.salongs}
-                         priceFilter={this.state.priceFilter}
-                         singleView={this.props.singleView} 
-             />
+          <ListSalongs
+            salongs={this.props.salongs}
+            priceFilter={this.state.priceFilter}
+            singleView={this.props.singleView}
+          />
         </ul>
-        </div>
+      </div>
     );
   }
 }
